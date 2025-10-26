@@ -1,13 +1,14 @@
 package airportrobot
 
+import "fmt"
+
 type Greeter interface {
 	LanguageName() string
 	Greet(name string) string
 }
 
 func SayHello(name string, g Greeter) string {
-	return "I can speak " + g.LanguageName() + ": " + g.Greet(name)
-	// return fmt.Sprintf("I can speak %s: %s", g.LanguageName(), g.Greet(name))
+	return fmt.Sprintf("I can speak %s: %s", g.LanguageName(), g.Greet(name))
 }
 
 type Italian struct{}
